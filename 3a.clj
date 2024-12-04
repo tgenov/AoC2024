@@ -5,7 +5,7 @@
 (defn process-muls [text]
   (->> text
        (re-seq #"mul\((\d+),(\d+)\)")
-       (map (fn [[full x y]]
+       (map (fn [[_ x y]]
               (let [num1 (Integer/parseInt x)
                     num2 (Integer/parseInt y)]
                 (* num1 num2))))
