@@ -6,15 +6,13 @@
 
 (defn get-diagonals [grid row col]
   (let [diagonal1 (str (get-in grid [(dec row) (dec col)])
-                       (get-in grid [row col])
                        (get-in grid [(inc row) (inc col)]))
         diagonal2 (str (get-in grid [(dec row) (inc col)])
-                       (get-in grid [row col])
                        (get-in grid [(inc row) (dec col)]))]
     [diagonal1 diagonal2]))
 
 (defn valid-diagonal? [s]
-  (or (= s "MAS") (= s "SAM")))
+  (or (= s "MS") (= s "SM")))
 
 (defn count-valid-as [grid]
   (count
